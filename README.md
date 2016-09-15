@@ -15,7 +15,7 @@ index.html
 - Use CSS reset files
 - Don't use `<br>` tags or non-breaking spaces (`&nbsp;`) to separate things. Use margins instead.
 - Format your CSS files cleanly:
-```
+```css
 .class#id {
   margin: 0 10px;
   border: 1px solid #000;
