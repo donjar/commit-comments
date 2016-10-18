@@ -4,7 +4,7 @@
 - Please give us more informative READMEs... In particular I want to know how to setup. If you give us a SQL file, tell us what are we supposed to do with it. Give us commands to be executed in our terminals!
 - Pay attention to code style, such as indentation, spaces, etc. There are lots of code formatters/linters online; Google them!
 - DRY (Don't Repeat Yourself): try to write the same piece of code at most twice. Here is an example:
-    ```php
+    ```
     echo "<th>ID</th>";
     echo "<th>Task</th>";
     echo "<th>Done?</th>";
