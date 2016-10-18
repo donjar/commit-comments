@@ -4,20 +4,24 @@
 - Please give us more informative READMEs... In particular I want to know how to setup. If you give us a SQL file, tell us what are we supposed to do with it. Give us commands to be executed in our terminals!
 - Pay attention to code style, such as indentation, spaces, etc. There are lots of code formatters/linters online; Google them!
 - DRY (Don't Repeat Yourself): try to write the same piece of code at most twice. Here is an example:
-    ```
+
+    ```php
     echo "<th>ID</th>";
     echo "<th>Task</th>";
     echo "<th>Done?</th>";
     echo "<th>Deadline</th>";
     echo "<th>Tags</th>";
     ```
+
 Imagine if you want to add another row some time in the future. You will need to manually add them in every table you created! It's much better to do something like:
+
     ```php
     $rows = ['ID', 'Task', 'Done?', 'Deadline', 'Tags'];
     foreach ($arr as $val) {
     	echo "<th>$val</th>";
     }
     ```
+
 Much cleaner. You can just edit the `$rows` variable if you want to add other rows.
 - Don't store password unencrypted in database! If your database is compromised, hackers will be able to gain access easily. Check out http://php.net/manual/en/faq.passwords.php
 - Please don't ever use:
@@ -37,6 +41,7 @@ Then, when users want to clone and set up your project, they can just copy `conf
 ## HanamaruSS/to-do-list
 - Abstract the tags inside head.
 - This code:
+
     ```php
     if ($order === "" || ($order !== "task" && $order !== "deadline" && $order !== "done" && $order !== "admin")) {
     	$order = "deadline";
@@ -45,7 +50,9 @@ Then, when users want to clone and set up your project, they can just copy `conf
     	$order = "admin_id";
     }
     ```
+
 Better would be something like:
+
     ```php
     $allowed_order = ["task", "deadline", "done", "admin"]
     if ($order === "admin") {
@@ -54,7 +61,9 @@ Better would be something like:
     	$order = "deadline"
     }
     ```
+
 - This code:
+
     ```php
     echo "<th><a href='/?o=task'>Task</a></th>";
     echo "<th><a href='/?o=deadline'>Deadline</a></th>";
@@ -62,7 +71,9 @@ Better would be something like:
     echo "<th>Tag(s)</th>";
     echo "<th><a href='/?o=admin'>Created by<th></tr></thead>";
     ```
+
 can be simplified to something like:
+
     ```php
     $headers = ["Task" => "task", "Deadline" => "deadline", "Is it done?" => "done", "Tag(s)" => NULL, "Created by" => "admin"];
     foreach ($array as $key => $value) {
@@ -73,6 +84,7 @@ can be simplified to something like:
     	}
     }
     ```
+
 - Usually junction tables (I call them join tables) are named according to the two tables it joins. In this case it is better to call it todo_tag, for example.
 
 ## KhooDesmond/commIT-homework
