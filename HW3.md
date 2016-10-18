@@ -13,7 +13,7 @@
     echo "<th>Tags</th>";
     ```
 
-Imagine if you want to add another row some time in the future. You will need to manually add them in every table you created! It's much better to do something like:
+  Imagine if you want to add another row some time in the future. You will need to manually add them in every table you created! It's much better to do something like:
 
     ```php
     $rows = ['ID', 'Task', 'Done?', 'Deadline', 'Tags'];
@@ -51,7 +51,7 @@ Then, when users want to clone and set up your project, they can just copy `conf
     }
     ```
 
-Better would be something like:
+  Better would be something like:
 
     ```php
     $allowed_order = ["task", "deadline", "done", "admin"]
@@ -72,7 +72,7 @@ Better would be something like:
     echo "<th><a href='/?o=admin'>Created by<th></tr></thead>";
     ```
 
-can be simplified to something like:
+  can be simplified to something like:
 
     ```php
     $headers = ["Task" => "task", "Deadline" => "deadline", "Is it done?" => "done", "Tag(s)" => NULL, "Created by" => "admin"];
